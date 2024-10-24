@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Insumos de Comunicación</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+
+    <h2>GESTIÓN DE INSUMOS DE COMUNICACIÓN</h2>
+
+    <div class="date-title-wrapper">
+        <div class="date-buttons">
+            <button id="prevDayBtn">-</button>
+        </div>
+        <div class="date-title" id="date-title"></div>
+        <div class="date-buttons">
+            <button id="nextDayBtn">+</button>
+            <button id="deleteBtn">🗑️</button>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+        <table id="gestionTable">
+            <thead>
+                <tr>
+                    <th>Categoría de Publicación</th>
+                    <th>Hora</th>
+                    <th>Resumen</th>
+                    <th>Copy Aprobado</th>
+                    <th>Red Social de Publicación</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <select>
+                            <option value="Boletín">Boletín</option>
+                            <option value="Diseño">Diseño</option>
+                            <option value="Reel">Reel</option>
+                            <option value="Video">Video</option>
+                        </select>
+                    </td>
+                    <td><input type="text" value="07:00 a.m." readonly></td> <!-- Cambiado a "text" para formato de 12 horas -->
+                    <td>
+                        <textarea class="resumen-aprobado" placeholder="Escribe aquí el resumen..."></textarea>
+                        <div class="icon-buttons">
+                            <button title="Ver más">&#x25BC;</button>
+                            <button title="Copiar">C</button>
+                            <button title="Pegar">P</button>
+                        </div>
+                    </td>
+                    <td>
+                        <textarea class="copy-aprobado" placeholder="Escribe aquí el copy aprobado..."></textarea>
+                        <div class="icon-buttons">
+                            <button title="Ver más">&#x25BC;</button>
+                            <button title="Copiar">C</button>
+                            <button title="Pegar">P</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="social-icons">
+                            <input type="checkbox" id="alcaldia">
+                            <label for="alcaldia">A</label>
+                            <input type="checkbox" id="lacapital">
+                            <label for="lacapital">LC</label>
+                            <input type="checkbox" id="jp">
+                            <label for="jp">JP</label>
+                        </div>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="Publicado">Publicado</option>
+                            <option value="En espera">En espera</option>
+                            <option value="Programado">Programado</option>
+                            <option value="En revisión">En revisión</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Botones inferiores -->
+    <div class="button-group">
+        <button id="addRowBtn">+</button>
+        <button id="exportBtn">E</button>
+    </div>
+
+    <script src="js/script.js"></script> <!-- Enlace al archivo JS -->
+</body>
+</html>
