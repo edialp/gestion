@@ -8,16 +8,21 @@
 </head>
 <body>
 
-    <h2>GESTIÓN EDIALP FINAL </h2>
+    <h2>SISTEMA DE GESTIÓN PRODUCTIVA</h2>
 
     <div class="date-title-wrapper">
         <div class="date-buttons">
-            <button id="prevDayBtn">-</button>
-        </div>
-        <div class="date-title" id="date-title"></div>
-        <div class="date-buttons">
-            <button id="nextDayBtn">+</button>
-            <button id="deleteBtn">🗑️</button>
+            <button id="prevDayBtn" class="minimal-button">-</button>
+            <input type="date" id="dateInput" value="" class="date-input"/>
+            <button id="nextDayBtn" class="minimal-button">+</button>
+            <select id="sheetSelector" class="minimal-select">
+                <option value="">Seleccionar hoja</option>
+                <!-- Opciones de hojas cargadas dinámicamente -->
+            </select>
+            <button id="createSheetBtn" title="Crear Hoja" class="minimal-button">&#128196;</button>
+            <button id="editSheetBtn" title="Editar Hoja" class="minimal-button">&#9998;</button>
+            <button id="deleteBtn" title="Borrar Hoja" class="minimal-button">🗑️</button>
+            <button id="saveSheetBtn" title="Guardar Hoja" class="minimal-button">💾</button>
         </div>
     </div>
 
@@ -25,11 +30,11 @@
         <table id="gestionTable">
             <thead>
                 <tr>
-                    <th>aCategoría de Publicación</th>
+                    <th>Categoría</th>
                     <th>Hora</th>
                     <th>Resumen</th>
                     <th>Copy Aprobado</th>
-                    <th>Red Social de Publicación</th>
+                    <th>Red Social</th>
                     <th>Estado</th>
                 </tr>
             </thead>
@@ -37,13 +42,15 @@
                 <tr>
                     <td>
                         <select>
+                            <option value="Seleccionar">Seleccionar</option>
                             <option value="Boletín">Boletín</option>
                             <option value="Diseño">Diseño</option>
                             <option value="Reel">Reel</option>
                             <option value="Video">Video</option>
+                            <option value="En Vivo">En Vivo</option>
                         </select>
                     </td>
-                    <td><input type="text" value="07:00 a.m." readonly></td> <!-- Cambiado a "text" para formato de 12 horas -->
+                    <td><input type="text" value="07:00 a.m." readonly></td>
                     <td>
                         <textarea class="resumen-aprobado" placeholder="Escribe aquí el resumen..."></textarea>
                         <div class="icon-buttons">
@@ -83,12 +90,14 @@
         </table>
     </div>
 
-    <!-- Botones inferiores -->
     <div class="button-group">
-        <button id="addRowBtn">+</button>
-        <button id="exportBtn">E</button>
+        <button id="addRowBtn" class="minimal-button">+</button>
+        <button id="exportBtn" class="minimal-button">E</button>
+        <button id="exportSelectBtn" class="minimal-button">Exportar</button> <!-- Botón para exportar en formato seleccionado -->
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="js/script.js"></script> <!-- Enlace al archivo JS -->
 </body>
 </html>
